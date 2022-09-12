@@ -20,7 +20,7 @@ public partial class AjoutEtudiantVue : ContentPage
 		 * 4 - envoyer les 3 informations dans le VM 
 		 * 5 - lancer la methode ajoutPointsJoueur*/
 
-		if (equipe.Text != "" && joueur.Text != "" && int.Parse(points.Text) < 1)
+		if (equipe.Text != "" && joueur.Text != "" && int.Parse(points.Text) >0)
 		{ 
 		vueModele.AjoutPointsJoueur(equipe.Text, joueur.Text, int.Parse(points.Text));
 		}

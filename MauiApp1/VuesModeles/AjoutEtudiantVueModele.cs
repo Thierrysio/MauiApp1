@@ -77,6 +77,8 @@ namespace MauiApp1.VuesModeles
             Joueur res2 = this.TestJoueur(param2);
             res1.AjoutPoints(res2, param3);
 
+            List<Equipe> LE = Equipe.CollClasse;
+
         }
         public Equipe TestEquipe(string param)
         {
