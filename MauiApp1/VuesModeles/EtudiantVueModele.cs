@@ -20,6 +20,16 @@ namespace MauiApp1.VuesModeles
 
         public EtudiantVueModele()
         {
+            Equipe E1 = new Equipe("equipe 1");
+
+            Joueur J1 = new Joueur("Riri");
+            Joueur J2 = new Joueur("Fifi");
+            Joueur J3 = new Joueur("Loulou");
+
+            E1.AjoutPoints(J1, 5);
+            E1.AjoutPoints(J3, 7);
+
+            MesJoueurs = E1.GetJoueurs();
         }
 
         #endregion
