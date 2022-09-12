@@ -49,6 +49,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Vues\AjoutEtudiantVue.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Vues\EtudiantVue.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
