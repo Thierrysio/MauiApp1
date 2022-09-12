@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace MauiApp1.VuesModeles
 {
@@ -27,7 +28,7 @@ namespace MauiApp1.VuesModeles
         #endregion
 
         #region Getters/Setters
-        public string Equipe
+        public string Equipes
         {
             get
             {
@@ -38,7 +39,7 @@ namespace MauiApp1.VuesModeles
                 SetProperty(ref _equipe, value);
             }
         }
-        public string Joueur
+        public string Joueurs
         {
             get
             {
@@ -64,13 +65,43 @@ namespace MauiApp1.VuesModeles
         #endregion
 
         #region Methodes
-        public void AjoutPointsJoueur(string param1,string param2, int param3)
+        public void AjoutPointsJoueur(string param1, string param2, int param3)
         {
+            
             /*
              * - verifier que les objets existent (equipe et joueur)
              * 
              * 
             */
+            Equipe res1 = this.TestEquipe(param1);
+            Joueur res2 = this.TestJoueur(param2);
+            res1.AjoutPoints(res2, param3);
+
+        }
+        public Equipe TestEquipe(string param)
+        {
+            Equipe resultat = null;
+            foreach (Equipe uneEquipe in Equipe.CollClasse)
+            {
+                if (uneEquipe.Nom == param) resultat = uneEquipe;
+            }
+            if (resultat == null)  return new Equipe(param);
+
+            return resultat;
+
+        }
+
+        public Joueur TestJoueur(string param)
+        {
+            Joueur resultat = null;
+            foreach (Joueur unJoueur in Joueur.CollClasse)
+            {
+                if (unJoueur.Nom == param) resultat = unJoueur;
+            }
+            if (resultat == null) return new Joueur(param);
+
+            return resultat;
+
         }
         #endregion
     }
