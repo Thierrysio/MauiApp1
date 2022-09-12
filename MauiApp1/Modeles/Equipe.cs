@@ -56,15 +56,15 @@ namespace MauiApp1.Modeles
         /// cette methode renvoie les joueurs ayant marqués au moins un point
         /// </summary>
         /// <returns> liste des joueurs</returns>
-        public ObservableCollection<string> GetJoueurs()
+        public ObservableCollection<Joueur> GetJoueurs()
         {
             // ObservableCollection fonctionne comme une liste
-            ObservableCollection<string> resultat = new ObservableCollection<string>();
+            ObservableCollection<Joueur> resultat = new ObservableCollection<Joueur>();
             foreach(KeyValuePair<Joueur,int> unJoueur in this.DicoPoints)
             {
                 if (unJoueur.Value > 0)
                 {
-                    resultat.Add(unJoueur.Key.Nom);
+                    resultat.Add(unJoueur.Key);
                 }
             }
             return resultat;

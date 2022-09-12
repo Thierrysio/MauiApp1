@@ -49,8 +49,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="VuesModeles\" />
-	  <Folder Include="Vues\" />
+	  <MauiXaml Update="Vues\EtudiantVue.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>
